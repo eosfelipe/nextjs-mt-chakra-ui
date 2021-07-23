@@ -8,7 +8,8 @@ import {
   Text,
   useBreakpointValue,
   useColorModeValue,
-  useDisclosure
+  useDisclosure,
+  useTheme
 } from '@chakra-ui/react'
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons'
 import { NavButton, CloseButton } from 'react-svg-buttons'
@@ -18,6 +19,7 @@ import MobileNav from './MobileNav'
 
 const Navbar = () => {
   const { isOpen, onToggle } = useDisclosure()
+  const { colors } = useTheme()
   return (
     <Box position={'fixed'} w={'full'} zIndex={2}>
       <Flex
@@ -32,7 +34,13 @@ const Navbar = () => {
         <Flex flex={{ base: 1, md: 'auto' }} ml={{ base: -2 }} display={{ base: 'flex', md: 'none' }} align={'center'}>
           <IconButton
             onClick={onToggle}
-            icon={isOpen ? <CloseButton size={40} color="#D53F8C" /> : <NavButton size={40} color="#D53F8C" />}
+            icon={
+              isOpen ? (
+                <CloseButton size={40} color={colors.highlight} />
+              ) : (
+                <NavButton size={40} color={colors.highlight} />
+              )
+            }
             variant={'ghost'}
             aria-label={'Toggle Navigation'}
             ml={3}

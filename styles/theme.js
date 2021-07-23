@@ -17,8 +17,8 @@ export const customTheme = extendTheme({
   fonts,
   fontWeights,
   colors: {
-    dark: '#0a192f',
-    highlight: '#D53F8C',
+    dark: '#151313', // #0a192f,
+    highlight: '#ff0042',
     light: '#ccd6f6',
     text: '#8892b0'
   },

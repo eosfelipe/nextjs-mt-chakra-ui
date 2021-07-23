@@ -1,9 +1,15 @@
-import { Stack, Flex, Button, Text, VStack, useBreakpointValue, useColorModeValue } from '@chakra-ui/react'
+import { Stack, Button, Text, VStack, useBreakpointValue, useColorModeValue } from '@chakra-ui/react'
 import TextReveal from './TextReveal'
 
 const Hero = () => {
   return (
     <VStack
+      __css={{
+        backgroundImage:
+          'radial-gradient(#8892b02b 1px, transparent 1px), radial-gradient(#8892b02b 1px, transparent 1px)',
+        backgroundPosition: '0 0, 25px 25px',
+        backgroundSize: '50px 50px'
+      }}
       w={'full'}
       h={'100vh'}
       justify={'center'}

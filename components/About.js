@@ -8,7 +8,8 @@ import {
   StackDivider,
   VStack,
   useColorModeValue,
-  useBreakpointValue
+  useBreakpointValue,
+  useTheme
 } from '@chakra-ui/react'
 import { MorphIcon } from 'react-svg-buttons'
 import TextReveal from './TextReveal'
@@ -47,6 +48,7 @@ const Feature = ({ icon, text }) => {
   )
 }
 const About = () => {
+  const { colors } = useTheme()
   return (
     <VStack w={'full'} h={'full'} justify={'center'} px={useBreakpointValue({ base: 10, md: 20 })}>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
@@ -79,30 +81,30 @@ const About = () => {
             {features.map(feature => (
               <Feature
                 key={feature.id}
-                icon={<MorphIcon type={feature.icon} color={feature.color} size={30} />}
+                icon={<MorphIcon type={feature.icon} color={colors.highlight} size={30} />}
                 text={feature.text}
               />
             ))}
           </Stack>
         </Stack>
         <Flex alignItems={'center'} p={5}>
-          {/* <Image
+          <Image
             boxSize={'max-content'}
             objectFit="cover"
             rounded={'md'}
             alt={'feature image'}
             src={
-              'https://images.unsplash.com/photo-1554200876-56c2f25224fa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+              'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'
             }
-          /> */}
-          <NextImage
+          />
+          {/* <NextImage
             src={
               'https://images.unsplash.com/photo-1554200876-56c2f25224fa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
             }
             alt="feature image"
             width={500}
             height={500}
-          />
+          /> */}
         </Flex>
       </SimpleGrid>
     </VStack>

@@ -3,6 +3,7 @@ import '@fontsource/open-sans/700.css'
 import { ChakraProvider } from '@chakra-ui/react'
 import { DefaultSeo } from 'next-seo'
 import { customTheme } from '../styles/theme'
+import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
   return (
