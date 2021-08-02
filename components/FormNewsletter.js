@@ -38,7 +38,7 @@ const FormNewsletter = () => {
 
   return (
     <>
-      <Stack as={'form'} direction={'row'} onSubmit={formik.handleSubmit}>
+      <Stack as={'form'} direction={'row'} onSubmit={formik.handleSubmit} width={'100%'}>
         <Input
           id="email"
           name="email"
