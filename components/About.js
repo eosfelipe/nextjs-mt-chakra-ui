@@ -11,6 +11,7 @@ import {
   useBreakpointValue,
   useTheme
 } from '@chakra-ui/react'
+import useInView from 'react-cool-inview'
 import { MorphIcon } from 'react-svg-buttons'
 import TextReveal from './TextReveal'
 
@@ -49,6 +50,8 @@ const Feature = ({ icon, text }) => {
 }
 const About = () => {
   const { colors } = useTheme()
+  const { observe, inView } = useInView()
+
   return (
     <VStack w={'full'} h={'full'} justify={'center'} px={useBreakpointValue({ base: 10, md: 20 })}>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
@@ -67,10 +70,11 @@ const About = () => {
             as={'h1'}
             color={useColorModeValue('dark', 'text')}
             position={'relative'}
-            fontWeight={'bold'}
+            fontWeight={'light'}
             fontSize={useBreakpointValue({ base: '3xl', md: '4xl' })}
+            ref={observe}
           >
-            <TextReveal>A digital Product design agency</TextReveal>
+            {inView ? <TextReveal>A digital Product design agency</TextReveal> : ''}
           </Text>
           <Text color={useColorModeValue('dark', 'light')} fontSize={'lg'}>
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore

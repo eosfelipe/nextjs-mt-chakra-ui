@@ -15,12 +15,16 @@
     "@emotion/styled": "^11",
     "@fontsource/open-sans": "^4.4.5",
     "@fontsource/raleway": "^4.4.5",
+    "axios": "^0.21.1",
+    "formik": "^2.2.9",
     "framer-motion": "^4",
     "next": "^11.0.0",
     "next-seo": "^4.26.0",
     "react": "17.0.2",
+    "react-cool-inview": "^2.0.7",
     "react-dom": "17.0.2",
-    "react-svg-buttons": "^0.4.0"
+    "react-svg-buttons": "^0.4.0",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
     "eslint": "^7.28.0",
